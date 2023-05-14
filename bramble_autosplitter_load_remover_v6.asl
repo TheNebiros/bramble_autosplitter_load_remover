@@ -69,6 +69,7 @@ startup
     vars.Correspondences.Add(18, 14);
     vars.Correspondences.Add(14, 15);
     vars.Correspondences.Add(15, 16);
+    vars.Correspondences.Add(16, 0);
 }
 
 onStart

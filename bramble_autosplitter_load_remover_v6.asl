@@ -97,7 +97,7 @@ split
 {
     if(settings["credits"] && old.Credits != current.Credits && current.Credits == true) return true;
     
-    return settings["ch" + old.Chapter] && vars.Correspondences[old.Chapter] == current.Chapter && !vars.CompletedChapters.Contains(old.Chapter) && vars.CompletedChapters.Add(old.Chapter);
+    return old.Chapter != 0 && old.Chapter != 16 && settings["ch" + old.Chapter] && vars.Correspondences[old.Chapter] == current.Chapter && !vars.CompletedChapters.Contains(old.Chapter) && vars.CompletedChapters.Add(old.Chapter);
 }
 
 isLoading

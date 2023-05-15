@@ -2,7 +2,6 @@ state("Bramble_TMK-Win64-Shipping")
 {
     byte Chapter : 0x4F1AC60, 0x180, 0x228, 0x38;
     string128 Map : 0x4F1AC60, 0x4A8, 0x2E;
-    // bool IsPlaying : 0x4F1AC60, 0x118, 0x328, 0x28C;
     bool Credits : 0x4D42280, 0x10, 0xD0, 0x118, 0x3B8, 0x178, 0x70, 0x234;
     bool Loading : 0x4DCFE04;
 }
@@ -11,25 +10,8 @@ startup
 {
     vars.MAINMENU_MAP = "MainMenu/LV_MainMenu_DarkForest";
     vars.CHAPTER1_MAP = "LV01_Childroom/LV1_Childroom";
-    // vars.CHAPTER2_MAP = "LV02_NearbyForest/LV2_NearbyForest";
-    // vars.CHAPTER3_MAP = "LV03_BrambleForest/LV2_BrambleForest";
-    // vars.CHAPTER4_MAP = "LV_Dream/LV_Dream1";
-    // vars.CHAPTER5_MAP = "LV04_TrollForest/LV4_TrollForest";
-    // vars.CHAPTER6_MAP = "LV05_NeckensPond/LV5_NaeckensPond";
-    // vars.CHAPTER7_MAP = "LV06_Tuva/LV6_Tuva";
-    // vars.CHAPTER8_MAP = "LV_Dream/LV_Dream2";
-    // vars.CHAPTER9_MAP = "LV06_Tuva/LV6_Tuva";
-    // vars.CHAPTER10_MAP = "LV07_Swamp/LV7_Swamp";
-    // vars.CHAPTER11_MAP = "LV08_Library/LV_Library";
-    // vars.CHAPTER12_MAP = "LV09_SkogsrasLabyrinth/LV9_SkogsrasLabyrinth";
-    // vars.CHAPTER13_MAP = "LV10_Pesta/LV10_Pesta_2";
-    // vars.CHAPTER14_MAP = "LV10_Pesta/LV_PestaBoss";
-    // vars.CHAPTER15_MAP = "LV_Dream/LV_Dream3";
-    // vars.CHAPTER16_MAP = "LV12_Halls/LV12_Halls";
-    // vars.CHAPTER17_MAP = "LV01_Childroom/LV13_Epilogue";
 
     settings.Add("chapters", true, "Split when completing a chapter:");
-        // settings.Add("ch00->01", true, "Main menu -> Children's Room", "chapters");
         settings.Add("ch01->02", true, "Children's Room -> Nearby Forest", "chapters");
         settings.Add("ch02->03", true, "Nearby Forest -> Gnome Forest", "chapters");
         settings.Add("ch03->04", true, "Gnome Forest -> Summit Pt.1", "chapters");
@@ -49,7 +31,7 @@ startup
         settings.Add("credits", true, "Credits", "chapters");
     // ...
 
-    vars.CompletedChapters = new HashSet<int>();
+    vars.CompletedChapters = new HashSet<string>();
 }
 
 onStart

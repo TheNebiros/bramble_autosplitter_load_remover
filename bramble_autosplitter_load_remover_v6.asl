@@ -2,7 +2,6 @@ state("Bramble_TMK-Win64-Shipping")
 {
     byte Chapter : 0x4F1AC60, 0x180, 0x228, 0x38;
     string128 Map : 0x4F1AC60, 0x4A8, 0x2E;
-    bool Credits : 0x4D42280, 0x10, 0xD0, 0x118, 0x3B8, 0x178, 0x70, 0x234;
     bool Loading : 0x4DCFE04;
 }
 
@@ -27,8 +26,7 @@ startup
         settings.Add("ch13->18", true, "Plague Village -> Pesta's Nightmare", "chapters");
         settings.Add("ch18->14", true, "Pesta's Nightmare -> The Summit Pt. 3", "chapters");
         settings.Add("ch14->15", true, "The Summit Pt. 3 -> Halls of the Mountain King", "chapters");
-        settings.Add("ch15->16", true, "Halls of the Mountain King -> Epilogue", "chapters");
-        settings.Add("credits", true, "Credits", "chapters");
+        settings.Add("ch15->16", true, "Halls of the Mountain King -> End", "chapters");
     // ...
 
     vars.CompletedChapters = new HashSet<string>();
@@ -52,9 +50,6 @@ start
 
 split
 {
-    if (!old.Credits && current.Credits && settings["credits"])
-        return true;
-
     string id = string.Format("ch{0:00}->{1:00}", old.Chapter, current.Chapter);
     if (settings[id] && vars.CompletedChapters.Add(id))
         return true;

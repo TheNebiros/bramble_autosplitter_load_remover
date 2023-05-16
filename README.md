@@ -5,7 +5,7 @@ Start :
 
 Splits :
   - When changing the in-game chapter (everything is customizable in the settings)
-  - After the cutscene in the Epilogue when interacting with the window, when the credits start
+  - Last split when skipping the last cutscene after beating the king and climbing his sword
 
 Reset :
   - Not implemented, use LiveSplit hotkeys

@@ -35,6 +35,8 @@ startup
 onStart
 {
     vars.CompletedChapters.Clear();
+
+    vars.RunFinished = false;
 }
 
 update
@@ -53,11 +55,14 @@ split
     string id = string.Format("ch{0:00}->{1:00}", old.Chapter, current.Chapter);
     if (settings[id] && vars.CompletedChapters.Add(id))
         return true;
+
+    if(vars.CompletedChapters.Contains("ch15->16"))
+        vars.RunFinished = true;
 }
 
 reset
 {
-    // return old.Map != current.Map && current.Map == vars.MAINMENU_MAP;
+    return old.Map != current.Map && current.Map == vars.MAINMENU_MAP && vars.RunFinished == false;
 }
 
 isLoading

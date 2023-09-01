@@ -1,15 +1,13 @@
 state("Bramble_TMK-Win64-Shipping")
 {
-    byte Chapter : 0x4F1AC60, 0x180, 0x228, 0x38;
-    string128 Map : 0x4F1AC60, 0x4A8, 0x2E;
-    bool Loading : 0x4DCFE04;
+    byte Chapter : 0x4F164F8, 0x8, 0x148, 0x38;
+	bool GameStarted : 0x4AE3808;
+    bool Loading : 0x4DCFE84;
+	int MapId : 0x480F00C;
 }
 
 startup
 {
-    vars.MAINMENU_MAP = "MainMenu/LV_MainMenu_DarkForest";
-    vars.CHAPTER1_MAP = "LV01_Childroom/LV1_Childroom";
-
     settings.Add("chapters", true, "Split when completing a chapter:");
         settings.Add("ch01->02", true, "Children's Room -> Nearby Forest", "chapters");
         settings.Add("ch02->03", true, "Nearby Forest -> Gnome Forest", "chapters");
@@ -30,6 +28,8 @@ startup
     // ...
 
     vars.CompletedChapters = new HashSet<string>();
+	
+	vars.MainMenuId = 2075760;
 }
 
 onStart
@@ -41,13 +41,12 @@ onStart
 
 update
 {
-    if (string.IsNullOrEmpty(current.Map))
-        current.Map = old.Map;
+	// ...
 }
 
 start
 {
-    return old.Map != current.Map && current.Map == vars.CHAPTER1_MAP;
+	return old.GameStarted == false && current.GameStarted == true;
 }
 
 split
@@ -62,7 +61,7 @@ split
 
 reset
 {
-    return old.Map != current.Map && current.Map == vars.MAINMENU_MAP && vars.RunFinished == false;
+	return old.MapId != current.MapId && current.MapId == vars.MainMenuId && vars.RunFinished == false;
 }
 
 isLoading

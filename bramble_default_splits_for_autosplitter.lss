@@ -81,6 +81,15 @@
       <SegmentHistory />
     </Segment>
     <Segment>
+      <Name>Tuva Pt.2</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
       <Name>The Swamp</Name>
       <Icon />
       <SplitTimes>
@@ -144,5 +153,30 @@
       <SegmentHistory />
     </Segment>
   </Segments>
-  <AutoSplitterSettings />
+  <AutoSplitterSettings>
+    <Version>1.5</Version>
+    <ScriptPath>C:\Users\Axel\Desktop\Speedrun\LiveSplit_1.8.25\Components\bramble_autosplitter_load_remover_v6.asl</ScriptPath>
+    <Start>True</Start>
+    <Reset>True</Reset>
+    <Split>True</Split>
+    <CustomSettings>
+      <Setting id="chapters" type="bool">True</Setting>
+      <Setting id="ch01-&gt;02" type="bool">True</Setting>
+      <Setting id="ch02-&gt;03" type="bool">True</Setting>
+      <Setting id="ch03-&gt;04" type="bool">True</Setting>
+      <Setting id="ch04-&gt;05" type="bool">True</Setting>
+      <Setting id="ch05-&gt;06" type="bool">True</Setting>
+      <Setting id="ch06-&gt;07" type="bool">True</Setting>
+      <Setting id="ch07-&gt;08" type="bool">False</Setting>
+      <Setting id="ch08-&gt;09" type="bool">True</Setting>
+      <Setting id="ch09-&gt;10" type="bool">True</Setting>
+      <Setting id="ch10-&gt;12" type="bool">True</Setting>
+      <Setting id="ch12-&gt;11" type="bool">True</Setting>
+      <Setting id="ch11-&gt;13" type="bool">True</Setting>
+      <Setting id="ch13-&gt;18" type="bool">True</Setting>
+      <Setting id="ch18-&gt;14" type="bool">True</Setting>
+      <Setting id="ch14-&gt;15" type="bool">True</Setting>
+      <Setting id="ch15-&gt;16" type="bool">True</Setting>
+    </CustomSettings>
+  </AutoSplitterSettings>
 </Run>
